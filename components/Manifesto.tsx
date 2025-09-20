@@ -34,16 +34,16 @@ This is not prophecy. It is craft. Measure, clean, simulate, compare, then act w
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.8, opacity: 0, y: 20 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="bg-black/90 border border-white/20 rounded-lg p-8 max-w-4xl max-h-[80vh] overflow-y-auto relative cursor-default"
+            className="bg-black/90 border border-white/20 rounded-lg p-6 max-w-4xl h-[80vh] relative cursor-default flex flex-col"
             onClick={(e) => e.stopPropagation()}
             style={{
               fontFamily: ' STILL, monospace',
             }}
           >
             {/* Manifesto content */}
-            <div className="text-white leading-relaxed space-y-6">
-              <div className="flex justify-between items-center mb-8 border-b border-white/20 pb-4">
-                <h1 className="text-3xl font-bold">
+            <div className="text-white leading-relaxed space-y-4 flex-1 flex flex-col">
+              <div className="flex justify-between items-center mb-4 border-b border-white/20 pb-3">
+                <h1 className="text-2xl font-bold">
                   MANIFESTO
                 </h1>
                 {/* Close button */}
@@ -56,25 +56,38 @@ This is not prophecy. It is craft. Measure, clean, simulate, compare, then act w
                 </button>
               </div>
               
-              <div className="text-lg space-y-6">
+              <div className="text-base space-y-4 flex-1 overflow-hidden">
                 {manifestoText.split('\n\n').map((paragraph, index) => {
                   const isHeader = paragraph.startsWith('WE START') || paragraph.startsWith('ALL OF THIS') || paragraph.startsWith('ILLUSIO');
                   const isAgentSection = paragraph.includes('THE ANALYZER') || paragraph.includes('THE PREDICTOR') || paragraph.includes('THE QUANTUM ERASER');
                   
                   return (
-                    <div key={index} className={isHeader ? 'border-l-4 border-white/40 pl-6' : ''}>
+                    <div key={index} className={isHeader ? 'border-l-4 border-white/40 pl-5' : ''}>
                       {isHeader ? (
                         <h2 className="text-xl font-bold text-white mb-3 tracking-wider">
                           {paragraph}
                         </h2>
                       ) : (
-                        <p className={`leading-relaxed ${isAgentSection ? 'ml-4 border-l border-white/10 pl-4' : ''}`}>
+                        <p className={`leading-relaxed text-base ${isAgentSection ? 'ml-4 border-l border-white/10 pl-4' : ''}`}>
                           {paragraph}
                         </p>
                       )}
                     </div>
                   );
                 })}
+              </div>
+
+              {/* AI Infrastructure */}
+              <div className="mt-4 pt-3 border-t border-white/20 flex-shrink-0">
+                <h3 className="text-sm font-bold text-white mb-3 text-center">
+                  POWERED BY
+                </h3>
+                <div className="flex justify-center items-center space-x-6">
+                  <img src="/OPENAI.png" alt="OpenAI" className="h-8 opacity-60 hover:opacity-100 transition-opacity duration-200" />
+                  <img src="/grok.png" alt="Grok" className="h-8 opacity-60 hover:opacity-100 transition-opacity duration-200" />
+                  <img src="/GEMENI.png" alt="Gemini" className="h-8 opacity-60 hover:opacity-100 transition-opacity duration-200" />
+                  <img src="/PERP.png" alt="Perplexity" className="h-8 opacity-60 hover:opacity-100 transition-opacity duration-200" />
+                </div>
               </div>
             </div>
           </motion.div>

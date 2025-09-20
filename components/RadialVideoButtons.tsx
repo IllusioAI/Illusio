@@ -172,7 +172,7 @@ export default function RadialVideoButtons({ isNavigationHubOpen, setIsNavigatio
         >
           <div className="text-lg font-bold mb-2">Scope</div>
           <div className="text-sm text-white/80 leading-relaxed">
-            Watch new tokens emerge in real time. Predictions are drawn from wallet flows, trading volume, and zodiac patterns, modeled through retrocausal logic of the quantum eraser.
+            Watch new tokens emerge in real time. Predictions are drawn from wallet flows, trading volume, and market patterns, modeled through retrocausal logic of the quantum eraser.
           </div>
         </div>
       )}
